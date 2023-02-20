@@ -1,0 +1,6 @@
+.todo-item-content--container {
+  max-width: 100%;
+  overflow-wrap: break-word;
+  text-align: left;
+  min-height: 50px;
+}

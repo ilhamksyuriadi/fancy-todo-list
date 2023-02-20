@@ -1,0 +1,45 @@
+.todo-item-action--container {
+  display: flex;
+  height: 24px;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.todo-item-action--button-delete {
+  background-color: var(--r700);
+  color: var(--n200);
+  border: none;
+  padding: 2px 0;
+  border-radius: 6px;
+  width: 66px;
+  font-weight: bold;
+}
+
+.todo-item-action--button-delete:hover {
+  cursor: pointer;
+  background-color: var(--r600);
+  color: var(--n100);
+}
+
+.todo-item-action--button-delete:disabled {
+  cursor: not-allowed;
+  background-color: var(--n300);
+  color: var(--n100);
+}
+
+.todo-item-action--button-edit {
+  background-color: var(--n300);
+  color: var(--n900);
+  border: none;
+  padding: 2px 0;
+  border-radius: 6px;
+  width: 66px;
+  font-weight: bold;
+}
+
+.todo-item-action--button-edit:hover {
+  cursor: pointer;
+  background-color: var(--n200);
+  color: var(--n700);
+}
+

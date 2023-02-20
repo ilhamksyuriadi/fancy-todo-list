@@ -1,0 +1,70 @@
+.delete-modal {
+  width: 300px;
+  background-color: var(--y50);
+  box-shadow: 0px 0px 3px 1px var(--y500);
+  border-radius: 10px;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  padding: 12px 12px;
+  box-sizing: border-box;
+}
+
+.delete-modal--warning-ascii {
+  font-size: 60px;
+  color: var(--y300)
+}
+
+.delete-modal--content {
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px
+}
+
+.delete-modal--text {
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+.delete-modal--button-container {
+  display: flex;
+  gap: 12px;
+  height: 24px;
+}
+
+.delete-modal--button-delete {
+  background-color: var(--r700);
+  color: var(--n200);
+  border: none;
+  border-radius: 6px;
+  width: 66px;
+  font-weight: bold;
+}
+
+.delete-modal--button-delete:hover {
+  cursor: pointer;
+  background-color: var(--r600);
+  color: var(--n100);
+}
+
+.delete-modal--button-cancel {
+  background-color: var(--n300);
+  color: var(--n900);
+  border: none;
+  border-radius: 6px;
+  width: 66px;
+  font-weight: bold;
+}
+
+.delete-modal--button-cancel:hover {
+  cursor: pointer;
+  background-color: var(--n200);
+  color: var(--n700);
+}

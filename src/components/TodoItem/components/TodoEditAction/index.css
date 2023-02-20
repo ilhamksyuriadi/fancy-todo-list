@@ -1,0 +1,45 @@
+.todo-edit-action--container {
+  display: flex;
+  height: 24px;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.todo-edit-action--button-save {
+  background-color: var(--g600);
+  color: var(--n200);
+  border: none;
+  padding: 2px 0;
+  border-radius: 6px;
+  width: 66px;
+  font-weight: bold;
+}
+
+.todo-edit-action--button-save:hover {
+  cursor: pointer;
+  background-color: var(--g500);
+  color: var(--n100);
+}
+
+.todo-edit-action--button-save:disabled {
+  cursor: not-allowed;
+  background-color: var(--n300);
+  color: var(--n100);
+}
+
+.todo-edit-action--button-cancel {
+  background-color: var(--n300);
+  color: var(--n900);
+  border: none;
+  padding: 2px 0;
+  border-radius: 6px;
+  width: 66px;
+  font-weight: bold;
+}
+
+.todo-edit-action--button-cancel:hover {
+  cursor: pointer;
+  background-color: var(--n200);
+  color: var(--n700);
+}
+

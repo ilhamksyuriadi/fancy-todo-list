@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* TO DO: overflow-y need to always showing up to make consistent size of width */
+  overflow-y: scroll; 
+}
+
+/* 
+remove default margin on p and h tag
+*/
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+/* variables for color pallete 
+number indicated how dark the color, the higher the number indicate more darker the color
+start with n: neutral (white to black)
+start with r: red
+start with b: blue
+start with y: yellow
+start with g: green
+*/
+:root {
+  --n0: #FFFFFF;
+  --n50: #F0F3F7;
+  --n100: #E4EBF5;
+  --n200: #D6DFEB;
+  --n300: #BFC9D9;
+  --n700: #525867;
+  --n900: #2E3137;
+  --r600: #E02954;
+  --r700: #B31D40;
+  --b700: #06649E;
+  --b800: #144D73;
+  --b900: #13354F;
+  --y50: #FFFAE6;
+  --y300: #FFC400;
+  --y500: #FF7F17;
+  --g500: #00AA5B;
+  --g600: #098A4E;
+}

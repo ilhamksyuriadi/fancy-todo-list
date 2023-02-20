@@ -1,0 +1,17 @@
+.todo-item--container {
+  width: 100%;
+  color: var(--n700);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px 12px;
+  box-sizing: border-box;
+  border-radius: 12px;
+  transition: 0.2s;
+}
+
+.todo-item--container:hover {
+  background-color: var(--n100);
+  color: var(--n900);
+}

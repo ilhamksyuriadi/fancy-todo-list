@@ -1,0 +1,24 @@
+.todo-cta--container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.todo-cta--button-add {
+  border: none;
+  height: 30px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: var(--b900);
+  color: var(--n200);
+  transition: 0.2s;
+  padding: 0 12px;
+}
+
+.todo-cta--button-add:hover {
+  background-color: var(--b800);
+  color: var(--n100);
+  cursor: pointer;
+}

@@ -1,0 +1,12 @@
+.empty-state--container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  text-align: center;
+  height: 500px;
+}
+
+.empty-state--ascii-logo {
+  font-size: 36px;
+}

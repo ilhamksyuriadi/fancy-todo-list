@@ -1,0 +1,50 @@
+.todo-add-form--button-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+
+.todo-add-form--button-cancel {
+  border: none;
+  height: 30px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: var(--n300);
+  color: var(--n900);
+  transition: 0.2s;
+  padding: 0 12px;
+}
+
+.todo-add-form--button-cancel:hover {
+  background-color: var(--n200);
+  color: var(--n700);
+  cursor: pointer;
+}
+
+
+.todo-add-form--button-save {
+  border: none;
+  height: 30px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: var(--g600);
+  color: var(--n200);
+  transition: 0.2s;
+  padding: 0 12px;
+}
+
+.todo-add-form--button-save:hover {
+  background-color: var(--g500);
+  color: var(--n100);
+  cursor: pointer;
+}
+
+.todo-add-form--button-save:disabled {
+  cursor: not-allowed;
+  background-color: var(--n300);
+  color: var(--n100);
+}
