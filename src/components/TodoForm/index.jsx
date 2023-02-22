@@ -6,6 +6,12 @@ import axios from 'axios'
 import { API_ENDPOINT } from '../../config/constants'
 import { checkExist, checkIfEmpty, convertTodoForMessage } from '../../utils'
 import { func, string, shape, number, arrayOf } from 'prop-types'
+import {
+  MESSAGE_ADD_SUCCESS,
+  MESSAGE_ADD_ERROR_API,
+  MESSAGE_ADD_ERROR_EMPTY,
+  MESSAGE_ADD_ERROR_EXIST,
+} from './constants'
 import './index.css'
 
 /**
@@ -42,23 +48,22 @@ const TodoForm = ({ todos, getTodos }) => {
           setAddValue('')
           const addedTodo = response.data.title
           const convertedAddedTodo = convertTodoForMessage(addedTodo)
-          toast.success(`Success adding ${convertedAddedTodo} to Todo List`)
+          toast.success(MESSAGE_ADD_SUCCESS(convertedAddedTodo))
           setTimeout(() => getTodos(), 200)
           setTimeout(() => handleChangeShowForm(), 200)
         })
         .catch((error) => {
-          const errorMessage =
-            error?.message || 'Failed adding Todo List, try again later'
+          const errorMessage = error?.message || MESSAGE_ADD_ERROR_API
           toast.error(errorMessage)
         })
         .finally(() => {
           setTimeout(() => handleChangeLoadingSubmit(), 200)
         })
     } else if (!isEmpty && isExist) {
-      const errorMessage = 'Todo already added'
+      const errorMessage = MESSAGE_ADD_ERROR_EXIST
       toast.error(errorMessage)
     } else {
-      const errorMessage = "Todo can't be empty"
+      const errorMessage = MESSAGE_ADD_ERROR_EMPTY
       toast.error(errorMessage)
     }
   }

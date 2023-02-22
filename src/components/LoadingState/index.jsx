@@ -13,6 +13,8 @@ const LoadingState = () => {
         <div />
         <div />
       </div>
+      <br />
+      <p>Please wait...</p>
     </div>
   )
 }

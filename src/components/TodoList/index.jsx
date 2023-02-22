@@ -25,9 +25,12 @@ export default function TodoList() {
       <div className="todo-list--divider" />
       <div className="todo-list--item-container">
         {todos?.length > 0 ? (
-          todos?.map((todo) => {
-            return <TodoItem key={todo.id} todo={todo} getTodos={getTodos} />
-          })
+          todos // TO DO: to show the last added todo first
+            .slice(0)
+            .reverse()
+            .map((todo) => {
+              return <TodoItem key={todo.id} todo={todo} getTodos={getTodos} />
+            })
         ) : (
           <EmptyState />
         )}

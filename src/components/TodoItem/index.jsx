@@ -9,6 +9,13 @@ import { toast } from 'react-hot-toast'
 import { API_ENDPOINT } from '../../config/constants'
 import { checkIfEmpty, convertTodoForMessage } from '../../utils'
 import { string, shape, number, func } from 'prop-types'
+import {
+  MESSAGE_DELETE_SUCCESS,
+  MESSAGE_DELETE_ERROR_API,
+  MESSAGE_EDIT_SUCCESS,
+  MESSAGE_EDIT_ERROR_API,
+  MESSAGE_EDIT_ERROR_EMPTY,
+} from './constants'
 import './index.css'
 
 /**
@@ -43,17 +50,16 @@ const TodoItem = ({ todo, getTodos }) => {
 
   const handleDelete = async () => {
     handleChangeLoadingDelete()
-    handleChangeDeleteModal()
+    handleChangeDeleteModal() // TO DO: to close modal immidiately after click deleta at modal confirmation
     axios
       .delete(`${API_ENDPOINT}/tasks/${todo.id}`)
       .then((response) => {
         const deletedTodo = convertTodoForMessage(response.data.title) || '' //TO DO: sometimes the server doesn't sent the title back, need to remove it
-        toast.success(`Success delete ${deletedTodo} from Todo List`)
+        toast.success(MESSAGE_DELETE_SUCCESS(deletedTodo))
         setTimeout(() => getTodos(), 200)
       })
       .catch((error) => {
-        const errorMessage =
-          error?.message || 'Failed delete todo, try again later'
+        const errorMessage = error?.message || MESSAGE_DELETE_ERROR_API
         toast.error(errorMessage)
       })
       .finally(() => {
@@ -71,27 +77,29 @@ const TodoItem = ({ todo, getTodos }) => {
       axios
         .put(`${API_ENDPOINT}/tasks/${todo.id}`, editedTodo)
         .then((response) => {
-          const editeddTodo = convertTodoForMessage(response.data.title) || '' //TO DO: sometimes the server doesn't sent the title back, need to remove it
-          toast.success(`Success edit todo: ${editeddTodo}`)
+          const editedTodo = convertTodoForMessage(response.data.title) || '' //TO DO: sometimes the server doesn't sent the title back, need to remove it
+          toast.success(MESSAGE_EDIT_SUCCESS(editedTodo))
           setTimeout(() => getTodos(), 200)
           setTimeout(() => handleChangeEditForm(), 200)
         })
         .catch((error) => {
-          const errorMessage =
-            error?.message || 'Failed edit todo, try again later'
+          const errorMessage = error?.message || MESSAGE_EDIT_ERROR_API
           toast.error(errorMessage)
         })
         .finally(() => {
           setTimeout(() => handleChangeLoadingEdit(), 200)
         })
     } else {
-      const errorMessage = "Todo can't be empty"
+      const errorMessage = MESSAGE_EDIT_ERROR_EMPTY
       toast.error(errorMessage)
     }
   }
 
   return (
-    <div className="todo-item--container">
+    <div
+      className={`todo-item--container 
+      ${showEditForm && 'todo-item--container-edit-active'}`}
+    >
       <TodoItemTitle title={todo.id.toString()} />
       {showEditForm ? (
         <TodoEdit value={editValue} onChange={handleChangeEditValue} />

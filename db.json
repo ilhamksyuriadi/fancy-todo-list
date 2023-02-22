@@ -1,12 +1,3 @@
 {
-  "tasks": [
-    {
-      "title": "<p>testz</p>",
-      "id": 15
-    },
-    {
-      "title": "<p>asd adasda</p>",
-      "id": 17
-    }
-  ]
+  "tasks": []
 }

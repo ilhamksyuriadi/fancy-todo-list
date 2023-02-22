@@ -31,14 +31,14 @@ const DeleteModal = ({ isOpen, onRequestClose, handleDelete, todoTitle }) => {
             className="delete-modal--button-cancel"
             onClick={onRequestClose}
           >
-            Cancel
+            No, Cancel
           </button>
           <button
             type="button"
             className="delete-modal--button-delete"
             onClick={handleDelete}
           >
-            Delete
+            Yes, Delete
           </button>
         </div>
       </div>
